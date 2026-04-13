@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythm Trainer — Beat Practice & Music Game | QuickUtils</title>
+    <meta name="description" content="Train your rhythmic skills with interactive beat patterns, tempo practice, and a visual rhythm game. Perfect for musicians and drummers.">
+    <meta name="keywords" content="rhythm, music, beat, tempo, trainer, metronome, practice, QuickUtils">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://quickutils.top/rhythm-trainer/">
+    <meta property="og:title" content="Rhythm Trainer — Beat Practice & Music Game">
+    <meta property="og:description" content="Interactive rhythm training with beat patterns, tempo control, and visual feedback.">
+    <meta property="og:url" content="https://quickutils.top/rhythm-trainer/">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥁</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar"><div class="container nav-inner">
+    <a href="/" class="brand">🥁 <span>RhythmTrainer</span></a>
+    <div class="nav-links">
+        <a href="https://ko-fi.com/dayatin" target="_blank" rel="noopener" class="kofi-link">☕ Support</a>
+        <a href="https://quickutils.top" target="_blank">QuickUtils</a>
+    </div>
+    <button class="theme-btn" id="themeBtn">🌙</button>
+</div></nav>
+<main class="container">
+    <section class="hero">
+        <h1><span class="gradient-text">Rhythm Trainer</span></h1>
+        <p class="hero-sub">Master your timing with interactive beat patterns and visual feedback</p>
+    </section>
+
+    <div class="game-layout">
+        <div class="glass-card main-area">
+            <div class="beat-display">
+                <canvas id="beatCanvas" width="800" height="300"></canvas>
+            </div>
+            <div class="hit-zone">
+                <div class="hit-feedback" id="hitFeedback"></div>
+                <div class="accuracy-display">
+                    <span class="score" id="score">0</span>
+                    <span class="combo" id="combo"></span>
+                </div>
+            </div>
+            <div class="controls-row">
+                <button class="btn btn-primary btn-lg" id="startBtn">▶ Start</button>
+                <button class="btn btn-secondary" id="stopBtn" disabled>⏹ Stop</button>
+            </div>
+            <p class="hint">Press <kbd>Space</kbd>, <kbd>D</kbd>, <kbd>F</kbd>, <kbd>J</kbd>, or <kbd>K</kbd> to hit beats • <kbd>Tap/Click</kbd> on mobile</p>
+        </div>
+
+        <div class="side-panel">
+            <div class="glass-card">
+                <h3 class="card-title">⚙️ Settings</h3>
+                <div class="control-group">
+                    <label>Tempo (BPM)</label>
+                    <div class="tempo-control">
+                        <button class="btn btn-icon" id="tempoDown">−</button>
+                        <span class="tempo-value" id="tempoVal">120</span>
+                        <button class="btn btn-icon" id="tempoUp">+</button>
+                    </div>
+                    <input type="range" id="tempoSlider" min="40" max="240" value="120" class="slider">
+                </div>
+                <div class="control-group">
+                    <label>Pattern</label>
+                    <select id="pattern">
+                        <option value="quarter">Quarter Notes (4/4)</option>
+                        <option value="eighth">Eighth Notes</option>
+                        <option value="triplet">Triplets</option>
+                        <option value="offbeat">Offbeat</option>
+                        <option value="syncopated">Syncopated</option>
+                        <option value="random">Random Mix</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label>Difficulty</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy (wide window)</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="hard">Hard (tight window)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="glass-card">
+                <h3 class="card-title">📊 Stats</h3>
+                <div class="stats-list">
+                    <div class="stat-row"><span>Perfect</span><span class="stat-val perfect" id="perfectCount">0</span></div>
+                    <div class="stat-row"><span>Good</span><span class="stat-val good" id="goodCount">0</span></div>
+                    <div class="stat-row"><span>Miss</span><span class="stat-val miss" id="missCount">0</span></div>
+                    <div class="stat-row"><span>Accuracy</span><span class="stat-val" id="accuracy">0%</span></div>
+                    <div class="stat-row"><span>Max Combo</span><span class="stat-val" id="maxCombo">0</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer"><div class="container footer-inner">
+    <div class="footer-brand"><span>🥁 RhythmTrainer</span><p>Part of <a href="https://quickutils.top">QuickUtils</a></p></div>
+    <p class="copyright">© 2026 QuickUtils. All rights reserved.</p>
+</div></footer>
+<script src="script.js"></script>
+</body>
+</html>
